@@ -8,11 +8,10 @@ use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
 use QeeZer\ApiResponder\Helpers;
-use QeeZer\ApiResponder\JsonResponseBuilder;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class Handler extends ExceptionHandler
@@ -44,13 +43,11 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Render an exception into an HTTP response.
-     *
      * @param Request $request
      */
-    public function render($request, Exception $e): JsonResponseBuilder
+    public function render($request, Exception $e): Response
     {
         // return parent::render($request, $e);
-        return Helpers::laravelExceptionRender($request, $e);
+        return Helpers::laravelExceptionRender($request, $e)->responder();
     }
 }

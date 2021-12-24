@@ -107,7 +107,6 @@ $app->configure('app');
 */
 
 $app->router->group([
-    'prefix' => 'api',
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
     require __DIR__ . '/../routes/api.php';

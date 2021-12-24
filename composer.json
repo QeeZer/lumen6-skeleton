@@ -45,7 +45,7 @@
         "test": "vendor/bin/phpunit",
         "test-": "phpdbg -dmemory_limit=1024M -qrr vendor/bin/phpunit -c phpunit.xml --verbose",
         "cs-fix": "php-cs-fixer fix $1",
-        "analyse": "vendor/bin/phpstan analyse --memory-limit 300M -l 0 -c phpstan.neon ./app",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit 300M -c phpstan.neon",
         "cghooks": "vendor/bin/cghooks"
     },
     "config": {

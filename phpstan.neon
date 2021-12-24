@@ -10,4 +10,5 @@ parameters:
     - tests
   reportUnmatchedIgnoredErrors: false
   ignoreErrors:
-    - 'Variable $router might not be defined.'
+    - '#Variable \$router might not be defined.#'
+    - '#Call to an undefined static method App\\Models\\[a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\)#'
