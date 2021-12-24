@@ -1,24 +1,48 @@
-# Lumen PHP Framework
+# Lumen skeleton
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+* It can format code and check the error code when submit code.
+* Use the best api response package of QeeZer/api-responder. 
+* Comprehensive stratification ensures project decoupling.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+### The directory structure
 
-## Official Documentation
+```
+app
+    Constants               All projects constants.
+    Logics                  Project's logics, the service every step logic.
+    Models                  Database models, just define data model.
+    Repositories            The data repository, exec all db query.
+    Services                Project's service and business.
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+doc                         The project's docs, named start with secret is not push to git repository.
 
-## Contributing
+libraries
+    businessHelpers.php     The project's business helper function, like defined `su_opt_log()` function for save the superuser operation log.
+    helpers.php             The project's helper function, like `e()` function to `throw new Exception()`
+    HelperUtils.php         The Object-oriented style helpers.
+```
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### usage
 
-## Security Vulnerabilities
+#### download
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+`git clone https://github.com/QeeZer/lumen6-skeleton.git`
 
-## License
+or 
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`git clone git@github.com:QeeZer/lumen6-skeleton.git`
+
+next run 
+
+`composer install`
+
+#### composer command
+
+```
+composer update-env             Replace env.example file to the .env file
+composer serve                  It same as php -S 0.0.0.0:9090 -t public
+composer test                   Run phpunit test
+composer test-                  Run phpunit coverage test and save html doc to doc directory
+composer cs-fix                 Run php-cs-fixer format code
+composer analyse                Run phpstan check code
+```

@@ -26,7 +26,11 @@
         "psr-4": {
             "App\\": "app/",
             "Libraries\\": "libraries/"
-        }
+        },
+        "files": [
+            "libraries/businessHelpers.php",
+            "libraries/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
@@ -41,7 +45,7 @@
         "post-update-cmd": "cghooks update",
 
         "update-env": "@php -r \"copy('.env.example', '.env');\"",
-        "run": ["Composer\\Config::disableProcessTimeout","php -S 0.0.0.0:9090 -t public"],
+        "serve": ["Composer\\Config::disableProcessTimeout","php -S 0.0.0.0:9090 -t public"],
         "test": "vendor/bin/phpunit",
         "test-": "phpdbg -dmemory_limit=1024M -qrr vendor/bin/phpunit -c phpunit.xml --verbose",
         "cs-fix": "php-cs-fixer fix $1",
