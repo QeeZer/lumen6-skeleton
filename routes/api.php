@@ -2,14 +2,5 @@
 
 declare(strict_types=1);
 
-use Laravel\Lumen\Routing\Router;
-
-/*
- * @var Router $router
- */
-
-if (! isset($router)) {
-    $router = null;
-}
-
+/** @var \Laravel\Lumen\Routing\Router $router */
 $router->get('/', 'ExampleController@lumenVersion');
