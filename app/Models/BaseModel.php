@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\BaseModel
+ * App\Models\BaseModel.
  *
  * @method static Builder|self newModelQuery()
  * @method static Builder|self newQuery()
