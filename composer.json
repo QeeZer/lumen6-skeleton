@@ -48,7 +48,7 @@
         "serve": ["Composer\\Config::disableProcessTimeout","php -S 0.0.0.0:9090 -t public"],
         "test": "vendor/bin/phpunit",
         "test-": "phpdbg -dmemory_limit=1024M -qrr vendor/bin/phpunit -c phpunit.xml --verbose",
-        "cs-fix": "php-cs-fixer fix $1",
+        "cs-fix": "vendor/bin/php-cs-fixer fix $1",
         "analyse": "vendor/bin/phpstan analyse --memory-limit 300M -c phpstan.neon",
         "cghooks": "vendor/bin/cghooks"
     },
