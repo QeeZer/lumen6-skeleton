@@ -7,7 +7,7 @@ parameters:
   level: 4
   parallel:
     maximumNumberOfProcesses: 8
-  tmpDir: runtime/phpStan
+  tmpDir: storage/phpStan
   paths:
     - app
     - tests
