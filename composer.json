@@ -64,8 +64,7 @@
             "pre-commit": [
                 "echo committing as $(git config user.name)",
                 "composer cs-fix",
-                "composer analyse",
-                "composer test"
+                "composer analyse && composer test"
             ],
             "post-merge": "composer install"
         }
